@@ -30,6 +30,10 @@ int main()
     else if (egzaminas >=5) {
         cout<<"Patenkinamai"<<endl;
     }
+
+    int pasirinkimas;
+    cout<<"Pasirinkite pazymi"<<endl;
+    cout<<"1. "
     
 
 
