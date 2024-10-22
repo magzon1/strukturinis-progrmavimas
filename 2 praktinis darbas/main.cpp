@@ -19,6 +19,11 @@ bool balse(char raide) {
     return otp;
 }
 
+void zaidimas (int& random) {
+    srand(time(0));
+    random = rand() % 100 + 1;
+}
+
 int main() {
     int pasirinkimas;
 
@@ -56,8 +61,29 @@ int main() {
                 }
                 cout<<"Didziausias bendras daliklis yra "<<sk1<<endl;
                 break;
+
+            case 3:
+                int band;
+                int random;
+                zaidimas(random);
+                cout<<"Programa sugeneruoja atsitiktini skaiciu (nuo 1 iki 100)."<<endl;
+                cout<<"Jusu tikslas atspeti koks tai yra skaicius, pradekime!"<<endl;
+                cout<<"Iveskite skaiciu, kuri jusu manymu, sugeneravo programa: "<<endl;
+                while (random != band) {
+                cin>>band;
+                if (random > band) {
+                    cout<<"Jusu ivestas skaicius yra MAZESNIS uz sugalvota, bandykite dar karta"<<endl;
+                }
+                else {
+                    cout<<"Jusu ivestas skaicius yra DIDESNIS uz sugalvota, bandykite dar karta"<<endl;
+                    }
+                }
+                cout<<endl;
+                cout<<"Teisingai! Sugeneruotas skaicius buvo "<<random<<endl;
+                break;
                 }
         }
     return 0;
 }
+
 
