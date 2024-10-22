@@ -24,6 +24,19 @@ void zaidimas (int& random) {
     random = rand() % 100 + 1;
 }
 
+void fizzbuzz(int n){
+    if (n % 3 == 0 && n % 5 == 0){
+        cout<<"FizzBuzz"<<endl;}
+    else if (n % 3 == 0){
+        cout<<"Fizz"<<endl;}
+    else if (n % 5 == 0){
+        cout<<"Buzz"<<endl;}
+
+    for (int i = 0; i < n; i++) {
+        cout<<i+1<<", ";
+    }
+}
+
 int main() {
     int pasirinkimas;
 
@@ -81,9 +94,17 @@ int main() {
                 cout<<endl;
                 cout<<"Teisingai! Sugeneruotas skaicius buvo "<<random<<endl;
                 break;
+
+            case 4:
+                int n;
+                cout<<"Iveskite sveikaji skaiciu: "<<endl;
+                cin>>n;
+                fizzbuzz(n);
+                cout<<endl;
                 }
         }
     return 0;
 }
+
 
 
