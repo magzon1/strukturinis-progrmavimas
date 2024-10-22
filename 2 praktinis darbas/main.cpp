@@ -6,6 +6,9 @@ using namespace std;
 bool tiesa = true;
 bool netiesa = false;
 
+int sk1;
+int sk2;
+
 bool balse(char raide) {
     bool otp = false;
     char balses[12] = {'o', 'i', 'y', 'u', 'a', 'e', 'O', 'I', 'Y', 'U', 'A', 'E'};
@@ -38,7 +41,23 @@ int main() {
                 cin>>raide;
                 cout<<"Ivesta raide "<<(balse(raide)? "yra" : "nera")<<" balse"<<endl;
                 break;
+
+            case 2:
+                cout<<"Iveskite pirma skaitmeni: "<<endl;
+                cin>>sk1;
+                cout<<"Iveskite antra skaitmeni: "<<endl;
+                cin>>sk2;
+
+                while (sk1 != sk2) {
+                if (sk1 > sk2) {
+                    sk1 = sk1 - sk2;}
+                else {
+                    sk2 = sk2 - sk1;}
+                }
+                cout<<"Didziausias bendras daliklis yra "<<sk1<<endl;
+                break;
                 }
         }
     return 0;
 }
+
