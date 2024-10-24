@@ -25,16 +25,15 @@ void zaidimas (int& random) {
 }
 
 void fizzbuzz(int n){
-    if (n % 3 == 0 && n % 5 == 0){
-        cout<<"FizzBuzz"<<endl;}
-    else if (n % 3 == 0){
-        cout<<"Fizz"<<endl;}
-    else if (n % 5 == 0){
-        cout<<"Buzz"<<endl;}
+    for (int i = 0; i < n; i++)
 
-    for (int i = 0; i < n; i++) {
-        cout<<i+1<<", ";
-    }
+    if ((i+1) % 3 == 0 && (i+1) % 5 == 0){
+        cout<<i+1<<" (FizzBuzz)"<<endl;}
+    else if ((i+1) % 3 == 0){
+        cout<<i+1<<" (Fizz)"<<endl;}
+    else if ((i+1) % 5 == 0){
+        cout<<i+1<<" (Buzz)"<<endl;}
+    else {cout<<i+1<<endl;}
 }
 
 int main() {
