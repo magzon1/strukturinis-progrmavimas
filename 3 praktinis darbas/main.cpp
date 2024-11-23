@@ -67,7 +67,8 @@ string encryptedAscii(const string& text, const string& key) {
     string encryptedText;
     int keyLength = key.length();
     for (size_t i = 0; i < text.length(); i++) {
-        char encryptedChar = (text[i] + key[i % keyLength]) % 256; // ASCII rėžyje
+        char encryptedChar = (text[i] + key[i % keyLength]) % 126;
+        if (encryptedChar <=32) {encryptedChar + 32;}
         encryptedText += encryptedChar;
     }
     return encryptedText;
@@ -77,7 +78,7 @@ string decryptedAscii(const string& encryptedText, const string& key) {
     string decryptedText;
     int keyLength = key.length();
     for (size_t i = 0; i < encryptedText.length(); i++) {
-        char decryptedChar = (encryptedText[i] - key[i % keyLength] + 256) % 256;
+        char decryptedChar = (encryptedText[i] - key[i % keyLength] + 126) % 126;
         decryptedText += decryptedChar;
     }
     return decryptedText;
