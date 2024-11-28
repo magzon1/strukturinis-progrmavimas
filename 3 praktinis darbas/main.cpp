@@ -67,18 +67,18 @@ string encryptedAscii(const string& text, const string& key) {
     string encryptedText;
     int keyLength = key.length();
     for (size_t i = 0; i < text.length(); i++) {
-        char encryptedChar = (text[i] + key[i % keyLength]) % 126;
-        if (encryptedChar <=32) {encryptedChar + 32;}
+        char encryptedChar = 32 + ((text[i] + key[i % keyLength] -2 * 32) % 94);
         encryptedText += encryptedChar;
     }
     return encryptedText;
 }
 
+
 string decryptedAscii(const string& encryptedText, const string& key) {
     string decryptedText;
     int keyLength = key.length();
     for (size_t i = 0; i < encryptedText.length(); i++) {
-        char decryptedChar = (encryptedText[i] - key[i % keyLength] + 126) % 126;
+        char decryptedChar = 32 + ((encryptedText[i] - key[i % keyLength] +94) % 94);
         decryptedText += decryptedChar;
     }
     return decryptedText;
