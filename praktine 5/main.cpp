@@ -36,7 +36,7 @@ void pridetiKontakta(int& nextId) {
     kontaktai = temp;
     contactCount++;
 
-    cout << "Kontaktas pridetas sekmingai!\n";
+    cout << "Kontaktas sekmingai\n";
 }
 
 void spausdintiKontaktus() {
@@ -174,8 +174,7 @@ int main() {
 
         return 0;
     }
-    else if (uzd == 2) {
-
+    if (uzd == 2) {
         int nextId = 1;
         int pasirinkimas;
 
@@ -203,8 +202,7 @@ int main() {
                     istrintiKontakta();
                 break;
                 case 5:
-                    cout << "Iseinama is programos...\n";
-                break;
+                    break;
                 default:
                     cout << "Neteisingas pasirinkimas. Bandykite dar karta.\n";
             }
@@ -216,7 +214,5 @@ int main() {
 
         return 0;
     }
-    else {
         cout<<"Klaida"<<endl;
-    }
 }
